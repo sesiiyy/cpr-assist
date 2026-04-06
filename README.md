@@ -2,6 +2,30 @@
 
 Monorepo for a real-time mobile CPR guidance system. **Assist is standalone:** vision and research code live in [`cpr_ml/`](cpr_ml/README.md) (vendored CPR ML bundle). No sibling `cpr/` checkout is required at runtime.
 
+## Datasets
+
+### Primary Dataset (Proposed Contribution)
+
+A novel dataset was created for this research based on HRCT sagittal chest images, enabling patient-specific CPR compression depth modeling.
+
+Dataset link: https://www.kaggle.com/datasets/sesandirajapakse/high-resolution-ct-thoracic-cpr-depth-dataset
+
+This dataset provides annotated thoracic regions and anatomical boundaries used to derive compression depth ranges.
+
+---
+
+### Secondary Dataset (Benchmark / Validation)
+
+The system was also evaluated using publicly available CPR-related datasets for comparison and validation purposes.
+
+CPR Coach Dataset: [Add link here]
+
+---
+
+## Dataset Contribution
+
+The primary HRCT dataset introduced in this work represents a novel contribution to CPR research by enabling anatomically grounded depth estimation rather than relying solely on generalized guidelines.
+
 ## Projects
 
 - `backend`: FastAPI + MongoDB API
