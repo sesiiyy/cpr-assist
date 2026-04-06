@@ -6,7 +6,7 @@ Monorepo for a real-time mobile CPR guidance system. **Assist is standalone:** v
 
 ### Primary Dataset (Proposed Contribution)
 
-A novel dataset was created for this research based on HRCT sagittal chest images, enabling patient-specific CPR compression depth modeling.
+A novel dataset was created for this research based on HRCT sagittal chest images giving patient specific CPR compression depth modeling.
 
 Dataset link: https://www.kaggle.com/datasets/sesandirajapakse/high-resolution-ct-thoracic-cpr-depth-dataset
 
@@ -15,7 +15,7 @@ This dataset provides annotated thoracic regions and anatomical boundaries used 
 
 ### Secondary Dataset (Benchmark / Validation)
 
-The system was also evaluated using publicly available CPR-related datasets for comparison and validation purposes.
+The system was also evaluated using publicly available CPR related datasets for comparison and validation purposes.
 
 CPR Coach Dataset:https://huggingface.co/datasets/ShunliWang/CPR-Coach
 
