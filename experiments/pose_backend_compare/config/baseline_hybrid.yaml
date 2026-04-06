@@ -1,0 +1,74 @@
+# FROZEN baseline — Stage 1 hybrid pose (see configs/experiments/README.md). Do not edit casually.
+# Frozen: 2026-04-01
+
+# YOLOv8-Pose on caregiver crop + MediaPipe on patient crop; optional Tasks full-frame refines patient only.
+
+video:
+  source: 0
+  width: 640
+  height: 480
+  fps_capture: 30
+  fps_process: 3
+
+preprocessing:
+  resize: [640, 480]
+  normalize: [0, 1]
+  stabilisation: true
+
+roi:
+  detector: yolo
+  conf_threshold: 0.5
+
+pose:
+  backend: hybrid
+  yolov8_model: yolov8n-pose
+  min_detection_confidence: 0.5
+  min_tracking_confidence: 0.5
+  multi_pose_landmarker: true
+  pose_landmarker_num_poses: 2
+  min_pose_presence_confidence: 0.5
+  pose_landmarker_model_path: null
+
+readiness:
+  max_persons: 2
+  crop_pad_px: 12
+  patient_torso_max_deviation_deg: 35.0
+  min_patient_bbox_aspect_wh: 1.15
+  min_torso_keypoints_visible: 2
+  alignment_max_center_dist_px: 140.0
+  role_patient_aspect_weight: 0.65
+  prompt_searching: "Need patient and rescuer in side view"
+  prompt_need_pair: "Show both patient and rescuer (side view)"
+  prompt_side_view: "Adjust side view — both bodies and chest visible"
+  prompt_patient_position: "Patient should lie supine (side camera)"
+  prompt_align: "Move hands toward the patient chest"
+  prompt_ready: "Hold position — ready"
+  prompt_adjust: "Adjust scene"
+  prompt_hold_steady: "Hold steady — keep position"
+  prompt_countdown: "Get ready: {seconds:.0f}s"
+  prompt_active_cpr: "Monitoring compressions"
+  stability:
+    consecutive_frames_for_stable: 5
+  session:
+    ready_hold_sec: 0.5
+    countdown_sec: 3.0
+
+calibration:
+  px_per_cm: null
+
+track_b:
+  compression:
+    buffer_max: 120
+    smooth_window: 5
+    min_depth_px: 4.0
+    min_separation_frames: 3
+
+track_a:
+  target_lower_cm: null
+  target_upper_cm: null
+  confidence: null
+  use_midpoint_display_target: true
+  min_confidence_to_use_band: null
+
+feedback:
+  consecutive_bad_cycles_to_trigger: 3

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "freeze_id": "ct_depth_tabular_v1",
+  "status": "frozen",
+  "frozen_at_utc": "2026-04-04",
+  "summary": "Track A tabular placeholder: champion regressor is sklearn MultiOutputRegressor(Ridge) on sex + age_years; mean_baseline (per_sex) retained for comparison only.",
+  "champion": {
+    "runner": "sklearn",
+    "model_key": "ridge",
+    "implementation": "sklearn.pipeline.Pipeline: ColumnTransformer(StandardScaler on age_years, OneHotEncoder on sex) + MultiOutputRegressor(Ridge(alpha=1.0))",
+    "features": ["sex", "age_years"],
+    "targets": ["depth_min_cm", "depth_max_cm"],
+    "source_run_id": "20260404_055703_utc"
+  },
+  "selection": {
+    "rule": "Lowest test_mae_mean_cm excluding mean_baseline; ties: fewer band inversions, then newest run_id."
+  },
+  "evaluation_snapshot": {
+    "manifest_rows_used": 204,
+    "split": {"train": 142, "val": 31, "test": 31},
+    "random_state": 42,
+    "mean_baseline_mode": "per_sex",
+    "ridge": {
+      "test": {
+        "test_mae_depth_min_cm": 0.032,
+        "test_mae_depth_max_cm": 0.07602,
+        "test_rmse_depth_min_cm": 0.03944,
+        "test_rmse_depth_max_cm": 0.18271,
+        "test_mae_mean_cm": 0.05401,
+        "test_pred_band_inversions": 0
+      },
+      "val": {
+        "test_mae_depth_min_cm": 0.03235,
+        "test_mae_depth_max_cm": 0.04542,
+        "test_rmse_depth_min_cm": 0.03915,
+        "test_rmse_depth_max_cm": 0.05467,
+        "test_mae_mean_cm": 0.03888,
+        "test_pred_band_inversions": 0
+      }
+    }
+  },
+  "reproduction_note": "Training and freeze are done in the main CPR codebase (not part of this results-only share). Same manifest bytes and random seed target the same split; sklearn version may change floats slightly.",
+  "artifacts": {
+    "joblib_note": "Trained ridge.joblib / mean_baseline.joblib exports are not included in this results-only share."
+  },
+  "limitations": [
+    "Not clinically validated; tabular-only (no images).",
+    "Age parsed from filename stems; verify extraction in the training data pipeline.",
+    "Future imaging-based Track A model may replace this contract for a production imaging path."
+  ]
+}

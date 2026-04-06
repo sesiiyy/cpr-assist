@@ -1,0 +1,20 @@
+                        precision    recall  f1-score   support
+
+               Correct     1.0000    1.0000    1.0000      1272
+          OverlapHands     1.0000    1.0000    1.0000      1132
+        ClenchingHands     1.0000    1.0000    1.0000      1124
+            SingleHand     1.0000    1.0000    1.0000      1148
+           BendingArms     1.0000    1.0000    1.0000      1012
+           TiltingArms     1.0000    1.0000    1.0000      1392
+          JumpPressing     1.0000    1.0000    1.0000      1392
+             Squatting     1.0000    1.0000    1.0000      1392
+              Standing     1.0000    1.0000    1.0000      1388
+         WrongPosition     1.0000    1.0000    1.0000      1756
+  InsufficientPressing     1.0000    1.0000    1.0000       740
+         SlowFrequency     1.0000    0.9968    0.9984      3756
+     ExcessivePressing     0.9915    1.0000    0.9957      1396
+RandomPositionPressing     1.0000    1.0000    1.0000      1436
+
+              accuracy                         0.9994     20336
+             macro avg     0.9994    0.9998    0.9996     20336
+          weighted avg     0.9994    0.9994    0.9994     20336

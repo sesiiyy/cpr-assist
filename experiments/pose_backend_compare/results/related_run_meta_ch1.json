@@ -1,0 +1,8 @@
+{
+  "created_at": "2026-03-31T18:53:29",
+  "input_image": "C:\\D\\Projects\\Shaku\\cpr\\datasets\\cpr_coach_dataset_sample\\CPR_Single_Error\\C00\\r00\\ch1\\00000010.jpg",
+  "config": null,
+  "default_config": true,
+  "run_directory": "C:\\D\\Projects\\Shaku\\cpr\\runs\\ch1_updated_mppose",
+  "intermediate_saved": true
+}

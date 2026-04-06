@@ -1,0 +1,28 @@
+{
+  "experiment": "pose_backend_compare",
+  "title": "YOLOv8-Pose vs Torchvision Keypoint R-CNN on CPR detector crop",
+  "date": "2026-03-31",
+  "input_image_repo_path": "runs/ch1_updated_mppose/intermediate/detector_crops/crop_00.png",
+  "input_image_in_package": "results/images/01_input_detector_crop.png",
+  "outputs": {
+    "yolov8_pose": {
+      "image": "results/images/02_yolov8n_pose_overlay.png",
+      "meta": {
+        "backend": "yolov8_pose",
+        "model": "yolov8n-pose",
+        "num_detections": 1,
+        "keypoints_shape": [1, 17, 3]
+      }
+    },
+    "torchvision_keypointrcnn": {
+      "image": "results/images/03_torchvision_keypointrcnn_overlay.png",
+      "meta": {
+        "backend": "torchvision_keypointrcnn_resnet50_fpn",
+        "num_person_candidates": 18,
+        "person_score": 0.9496407508850098
+      }
+    }
+  },
+  "recommendation": "YOLOv8-Pose for caregiver skeleton quality on this crop.",
+  "not_run": "RTMPose, HRNet (MMPose), AlphaPose — see OTHER_BACKENDS.txt"
+}

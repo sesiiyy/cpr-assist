@@ -1,0 +1,29 @@
+{
+  "ct_root": "data/ct_data_original",
+  "paired_rows": 204,
+  "unpaired_case_keys": 2,
+  "unclassified_files": 2,
+  "skipped_files": 0,
+  "unpaired": [
+    {
+      "sex": "female",
+      "case_key": "58Y",
+      "has_min": false,
+      "has_max": false
+    },
+    {
+      "sex": "male",
+      "case_key": "68 y- 2",
+      "has_min": false,
+      "has_max": false
+    }
+  ],
+  "unpaired_truncated": false,
+  "unclassified_sample": [
+    "data\\ct_data_original\\Female\\45 YAnterior.mrk.json",
+    "data\\ct_data_original\\Female\\45 YPosterior.mrk.json"
+  ],
+  "unclassified_truncated": false,
+  "skipped_sample": [],
+  "skipped_truncated": false
+}

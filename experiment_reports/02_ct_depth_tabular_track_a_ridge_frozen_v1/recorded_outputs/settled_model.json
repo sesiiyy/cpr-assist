@@ -1,0 +1,13 @@
+{
+  "n_entries": 10,
+  "settled": {
+    "run_id": "20260404_055703_utc",
+    "runner": "sklearn",
+    "model": "ridge",
+    "test_mae_mean_cm": 0.05401,
+    "tie_break_note": "Lowest test_mae_mean_cm; then fewer band inversions; then newest run_id (stable sort)."
+  },
+  "excluded_from_settled": [
+    "mean_baseline"
+  ]
+}

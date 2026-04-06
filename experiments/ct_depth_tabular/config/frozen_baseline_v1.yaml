@@ -1,0 +1,35 @@
+# Pinned training recipe for frozen Track A tabular baseline v1 (delivery).
+# Matches the settled sklearn run 20260404_055703_utc (sex + age_years only; no engineered columns).
+# Reproduce: extract_manifest.py then train_compare.py with this file.
+
+ct_original_root: data/ct_data_original
+
+extract:
+  swap_if_reversed: true
+  drop_missing_age: false
+  include_thoracic: true
+
+output:
+  manifest_csv: experiments/ct_depth_tabular/data/ct_depth_manifest.csv
+  report_json: experiments/ct_depth_tabular/data/extraction_report.json
+
+train:
+  manifest_csv: experiments/ct_depth_tabular/data/ct_depth_manifest.csv
+  use_engineered_features: false
+  random_state: 42
+  train_frac: 0.70
+  val_frac: 0.15
+  test_frac: 0.15
+  group_split_by_case_key: false
+  mean_baseline: per_sex
+  tree_backend: xgboost
+  ridge_alpha: 1.0
+  rf_n_estimators: 200
+  rf_max_depth: null
+  xgb_n_estimators: 300
+  xgb_max_depth: 4
+  xgb_learning_rate: 0.05
+  mlp_hidden: [64, 32]
+  mlp_max_iter: 2000
+
+runs_dir: experiments/ct_depth_tabular/runs

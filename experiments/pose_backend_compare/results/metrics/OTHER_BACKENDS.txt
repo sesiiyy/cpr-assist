@@ -1,0 +1,7 @@
+RTMPose / HRNet (MMPose)
+  Install OpenMMLab stack (see https://github.com/open-mmlab/mmpose ), then run their
+  demo scripts on this image path. Models are not included in this repo.
+
+AlphaPose
+  Separate repository (https://github.com/MVIG-SJTU/AlphaPose ) with its own weights
+  and CUDA setup; not invoked from this script.

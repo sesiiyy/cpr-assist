@@ -1,0 +1,27 @@
+{
+  "input": "C:\\D\\Projects\\Shaku\\cpr\\runs\\ch1_updated_mppose\\intermediate\\detector_crops\\crop_00.png",
+  "outputs": {
+    "yolov8_pose": {
+      "path": "experiments\\pose_backend_compare\\results\\images_build\\crop_00_yolov8_pose.png",
+      "meta": {
+        "backend": "yolov8_pose",
+        "model": "yolov8n-pose",
+        "num_detections": 1,
+        "keypoints_shape": [
+          1,
+          17,
+          3
+        ]
+      }
+    },
+    "torchvision_keypointrcnn": {
+      "path": "experiments\\pose_backend_compare\\results\\images_build\\crop_00_torchvision_keypointrcnn.png",
+      "meta": {
+        "backend": "torchvision_keypointrcnn_resnet50_fpn",
+        "num_person_candidates": 18,
+        "person_score": 0.9496407508850098
+      }
+    }
+  },
+  "note": "RTMPose, HRNet (MMPose), AlphaPose are not run here \u2014 see OTHER_BACKENDS.txt"
+}

@@ -1,0 +1,121 @@
+{
+  "run_id": "20260404_064815_utc_pytorch_tabular",
+  "device": "xpu",
+  "n_total": 204,
+  "n_train": 142,
+  "n_val": 31,
+  "n_test": 31,
+  "models": {
+    "mean_baseline": {
+      "val": {
+        "test_mae_depth_min_cm": 0.03383,
+        "test_mae_depth_max_cm": 0.04576,
+        "test_rmse_depth_min_cm": 0.04068,
+        "test_rmse_depth_max_cm": 0.05533,
+        "test_mae_mean_cm": 0.0398,
+        "test_pred_band_inversions": 0
+      },
+      "test": {
+        "test_mae_depth_min_cm": 0.03344,
+        "test_mae_depth_max_cm": 0.07549,
+        "test_rmse_depth_min_cm": 0.04076,
+        "test_rmse_depth_max_cm": 0.18477,
+        "test_mae_mean_cm": 0.05446,
+        "test_pred_band_inversions": 0
+      }
+    },
+    "mlp_shallow": {
+      "val": {
+        "test_mae_depth_min_cm": 0.04465,
+        "test_mae_depth_max_cm": 0.05098,
+        "test_rmse_depth_min_cm": 0.05426,
+        "test_rmse_depth_max_cm": 0.06086,
+        "test_mae_mean_cm": 0.04782,
+        "test_pred_band_inversions": 0
+      },
+      "test": {
+        "test_mae_depth_min_cm": 0.03962,
+        "test_mae_depth_max_cm": 0.06899,
+        "test_rmse_depth_min_cm": 0.05112,
+        "test_rmse_depth_max_cm": 0.17578,
+        "test_mae_mean_cm": 0.0543,
+        "test_pred_band_inversions": 0
+      },
+      "hidden": [
+        64,
+        32
+      ],
+      "dropout": 0.1
+    },
+    "mlp_medium": {
+      "val": {
+        "test_mae_depth_min_cm": 0.03794,
+        "test_mae_depth_max_cm": 0.07901,
+        "test_rmse_depth_min_cm": 0.04677,
+        "test_rmse_depth_max_cm": 0.09344,
+        "test_mae_mean_cm": 0.05848,
+        "test_pred_band_inversions": 0
+      },
+      "test": {
+        "test_mae_depth_min_cm": 0.04922,
+        "test_mae_depth_max_cm": 0.10321,
+        "test_rmse_depth_min_cm": 0.05564,
+        "test_rmse_depth_max_cm": 0.18411,
+        "test_mae_mean_cm": 0.07621,
+        "test_pred_band_inversions": 0
+      },
+      "hidden": [
+        128,
+        64
+      ],
+      "dropout": 0.15
+    },
+    "mlp_deep": {
+      "val": {
+        "test_mae_depth_min_cm": 0.04723,
+        "test_mae_depth_max_cm": 0.03981,
+        "test_rmse_depth_min_cm": 0.05658,
+        "test_rmse_depth_max_cm": 0.05121,
+        "test_mae_mean_cm": 0.04352,
+        "test_pred_band_inversions": 0
+      },
+      "test": {
+        "test_mae_depth_min_cm": 0.04025,
+        "test_mae_depth_max_cm": 0.06947,
+        "test_rmse_depth_min_cm": 0.0474,
+        "test_rmse_depth_max_cm": 0.18522,
+        "test_mae_mean_cm": 0.05486,
+        "test_pred_band_inversions": 0
+      },
+      "hidden": [
+        256,
+        128,
+        64
+      ],
+      "dropout": 0.2
+    },
+    "mlp_wide": {
+      "val": {
+        "test_mae_depth_min_cm": 0.05699,
+        "test_mae_depth_max_cm": 0.05062,
+        "test_rmse_depth_min_cm": 0.07199,
+        "test_rmse_depth_max_cm": 0.06085,
+        "test_mae_mean_cm": 0.05381,
+        "test_pred_band_inversions": 0
+      },
+      "test": {
+        "test_mae_depth_min_cm": 0.04658,
+        "test_mae_depth_max_cm": 0.07426,
+        "test_rmse_depth_min_cm": 0.06254,
+        "test_rmse_depth_max_cm": 0.17705,
+        "test_mae_mean_cm": 0.06042,
+        "test_pred_band_inversions": 0
+      },
+      "hidden": [
+        512,
+        256
+      ],
+      "dropout": 0.25
+    }
+  }
+}

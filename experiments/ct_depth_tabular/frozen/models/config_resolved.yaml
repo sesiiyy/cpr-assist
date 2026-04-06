@@ -1,0 +1,36 @@
+# CT depth tabular experiment — paths relative to repository root unless absolute.
+
+ct_original_root: data/ct_data_original
+
+extract:
+  # If true, swap min/max when max < min after conversion to cm
+  swap_if_reversed: true
+  # Drop rows where age_years could not be parsed
+  drop_missing_age: false
+  # Include thoracic line length (mm) when both min/max exist
+  include_thoracic: true
+
+output:
+  manifest_csv: experiments/ct_depth_tabular/data/ct_depth_manifest.csv
+  report_json: experiments/ct_depth_tabular/data/extraction_report.json
+
+train:
+  manifest_csv: experiments/ct_depth_tabular/data/ct_depth_manifest.csv
+  random_state: 42
+  train_frac: 0.70
+  val_frac: 0.15
+  test_frac: 0.15
+  # group split: if true, same case_key never spans train and test (requires duplicate keys — usually one row per key)
+  group_split_by_case_key: false
+  mean_baseline: per_sex  # global | per_sex
+  tree_backend: xgboost  # xgboost | histgb (histgb needs no xgboost pip package)
+  ridge_alpha: 1.0
+  rf_n_estimators: 200
+  rf_max_depth: null
+  xgb_n_estimators: 300
+  xgb_max_depth: 4
+  xgb_learning_rate: 0.05
+  mlp_hidden: [64, 32]
+  mlp_max_iter: 2000
+
+runs_dir: experiments/ct_depth_tabular/runs
