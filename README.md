@@ -41,3 +41,44 @@ Optional seed data:
 
 Use demo credentials after seeding:
 - `caregiver@example.com / password123`
+
+  ## System Architecture
+
+The system consists of two main components:
+
+1. Motion Analysis Module  
+   - Extracts body movement from video input  
+   - Tracks compression cycles and rate  
+
+2. Anatomical Modeling Module  
+   - Uses HRCT sagittal chest data  
+   - Defines patient-specific compression depth range  
+
+These modules are integrated to provide real-time CPR feedback.
+
+---
+
+## How to Run
+
+1. Navigate to the implementation folder
+2. Install dependencies
+3. Run the main application file
+
+(Note: Full deployment requires mobile application setup and camera input.)
+
+---
+
+## Evaluation
+
+System performance was evaluated using:
+- Simulated CPR scenarios
+- Variation in lighting, angles, and participants
+- Comparison with standard CPR guidelines (100–120 CPM)
+
+Results and analysis are included in the `testing-report/` directory.
+
+---
+
+## Repository Link (For Thesis)
+
+This repository is submitted as part of the undergraduate thesis requirement.
